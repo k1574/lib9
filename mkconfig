@@ -1,22 +1,20 @@
+MKPATH = ../mk
+<$MKPATH/inc/path
+<$MKPATH/inc/inclib
+<$MKPATH/inc/util
 
 NAME = lib9
 VERSION = 7
 
 # Plan9 root directory. Depends on your installation.
-PLAN9PATH = /usr/local/plan9
+#PLAN9PATH = /usr/local/plan9
 
 OBJTYPE = 386
 #OBJTYPE = arm
 #OBJTYPE = x86_64
 #OBJTYPE = sun4u
 
-AR  = ar 
-CC = cc
-
 # Don't edit after this line if you don't understand how it works.
-
-DOTINC = -I.
-SECINC = -Isec
 
 INC= $DOTINC $SECINC
 
@@ -26,8 +24,7 @@ CPPFLAGS = \
 	-DPLAN9PATH=\"$PLAN9PATH\" \
 	-D_DEFAULT_SOURCE \
 
-CFLAGS =
-
+CFLAGS = $CPPFLAGS
 ARFLAGS = rc
 
 #  Following objects are not compiled for several reasons.

@@ -1,4 +1,4 @@
-include config.mk
+include makeconfig
 
 LIB=${NAME}.a
 
@@ -12,3 +12,8 @@ ${LIB}: ${OFILES}
 
 clean:
 	rm -f ${OFILES} ${LIB}
+install:
+	mkdir -p ${MAN}/7
+	cp -f man-regexp ${MAN}/7/regexp
+	chmod 0644 ${MAN}/7/regexp
+
